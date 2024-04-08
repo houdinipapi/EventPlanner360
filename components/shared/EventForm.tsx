@@ -19,6 +19,7 @@ import { Input } from "@/components/ui/input"
 import { EventFormSchema } from "@/lib/validator"
 import * as z from "zod"
 import { eventDefaultValues } from "@/constants"
+import Dropdown from "./Dropdown"
 
 
 
@@ -59,9 +60,19 @@ const EventForm = ({ userId, type }: EventFormProps) => {
                   <FormControl>
                     <Input placeholder="Event Title" {...field} className="input-field" />
                   </FormControl>
-                  <FormDescription>
-                    This is your public display name.
-                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="title"
+              render={({ field }) => (
+                <FormItem className="w-full">
+                  <FormControl>
+                    <Dropdown onChangeHandler={field.onChange} value={field.value} />
+                  </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
