@@ -9,7 +9,8 @@ export default authMiddleware({
         "/api/uploadthing",
         "/assets/images/logo.svg",
         "/assets/images/hero.png",
-        "/assets/images/dotted-pattern.png"
+        "/assets/images/dotted-pattern.png",
+        "/favicon.ico"
 
     ],
     ignoredRoutes: [
